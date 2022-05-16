@@ -1,9 +1,9 @@
 # A personal blog project for practice
 ## frontend:
-• login page
-• register page
-• blog page 
-• text editor page
+• login page (completed)
+• register page (completed)
+• blog page (developing)
+• text editor page (developing)
 
 ---
 
