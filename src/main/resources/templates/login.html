@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>login</title>
-<link rel="stylesheet" type="text/css" href="/css/mycss.css">
+<link rel="stylesheet" type="text/css" href="/css/signUpIn.css">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Ubuntu">
 <link rel="stylesheet"
@@ -12,22 +12,28 @@
 </head>
 
 <body>
-	<div>
+	<div style= "width: 30%;">
 		<h1>LOGIN</h1>
 		<br>
 		<hr>
 		<br>
 		<form action="/blog" method="post">
-			<label for="username" class="desc">UserName:</label> 
+			<label for="username" class="desc">Username</label> 
 			<input
 				type="text" id="username" class="text_input" name="username"
 				placeholder="Enter UserName"> <br> <br> 
-				<label for="password" class="desc">Password:</label> 
+				
+				<label for="password" class="desc">Password</label> 
 				<input type="password"
 				class="text_input" name="password" placeholder="Enter Password">
-			<br> <br> 
+			<br> <br>
+			
+			<hr><br>
+			
 			<input type="submit" value="Login" id="submit_button" style="font-size: 18px"> 
 		</form>
+		<br>
+		<p id="sign_in">Do not have an account? <a href="register">Register </a> </p>
 	</div>
 </body>
 </html>

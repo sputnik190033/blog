@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>loginTest</title>
-	<link rel="stylesheet" type="text/css" href="/css/mycss.css">
+	<link rel="stylesheet" type="text/css" href="/css/signUpIn.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
 	<link rel="stylesheet"
 		href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
@@ -15,29 +15,35 @@
 
 <body style = "background-color: gainsboro;">
 	<div>
+		<br>
 		<h1>REGISTER</h1>
 		<br>
-		<p>Please fill in this form to create an account.</p>
+		
 		<hr>
-
+		
+		<!-- <p style = "color:grey">Please fill in this form to create an account.</p> -->
 		<form action="/register" method="post">
-			<br>
+			
 			<label for="username" class="desc"> <b>Username</b> </label>
 			<br>
 			<input type="text" name="username" class="text_input" placeholder="Enter Username">
-			<br>
+			<br><br>
+			
 			<label for="password" class="desc"> <b>Password </b></label>
 			<br>
 			<input type="password" name="password" class="text_input" placeholder="Enter Password">
-			<br>
+			<br><br>
+			
 			<label for="rpassword" class="desc"> Repeat Password </label>
 			<br>
 			<input type="password" name="rpassword" class="text_input" placeholder="Repeat Password">
 			<br>
 			<br>
+			
 			<hr>
 			<p>By creating an account you agree to our <a href="#">Terms and Policy</a></p>
-			<br>
+			
+
 			<input type="submit" value="Register" id="submit_button" style="font-size: 18px;">
 		</form>
 		<br>
