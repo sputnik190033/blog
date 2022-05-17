@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog: Editor</title>
+  <title>Blog: reader</title>
 
   <link rel="stylesheet" type="text/css" href="editor.css">
   <link rel="stylesheet" type="text/css" href="home.css">
-  
+  <link rel="stylesheet" type="text/css" href="reader.css">
+
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
 	<link rel="stylesheet"
 		href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
@@ -19,30 +20,20 @@
 <body>
 
   <div class="topnav">
-		<a class="active" href="#">New Blog</a>
-		<a href="home.html">Home</a>		
+		<a href="editor.html">New Blog</a>
+		<a href="home.html">Home</a>	
+    <a href="#" class="active">Blog</a>	
 	</div>
 
-  <div class="banner">
-    <input type="file" accept="image/*" id="banner-upload" hidden>
-    <label for="banner-upload" class="banner-upload-btn">
-      <span class="material-symbols-outlined">
-        upload_image
-      </span>
-    </label>
-  </div>
+  <div class="banner"></div>
 
   <div class="blog">
-    <textarea type="text" class="title" placeholder="Blog Title..."></textarea>
-    <textarea type="text" class="article" placeholder="Write down something here..."></textarea>
+    <h1 class="title">Blog Title</h1>
+    <p class="published"><span>published at - </span></p>
+    <div class="article">
+      This is the content of this blog.
+    </div>
   </div>
 
-  <div class="blog-options">
-    <form action="/" method="post">
-      <button class="btn cyan publish-btn" type="submit">publish</button>
-      <input type="file" accept="image/*" id="image-upload" hidden>
-      <label for="image-upload" class="btn grey upload-btn">upload image</label>
-    </form>
-  </div>
 </body>
 </html>
