@@ -45,15 +45,24 @@ float: right;
 	grid-template-columns: repeat(2,1fr);
 	grid-gap: 80px;
 }
+.blog-card{
+	border:none;
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px #aaaaaa;
+}
 .blog-image{
 	width: 100%;
 	height: 250px;
 	object-fit: cover;
 	border-radius: 10px;
 	margin-bottom: 10px;
+	
+}
+.blog-title{
+	margin:0px 10px 10px;
 }
 .blog-overview{
-	margin:10px 0 20px;
+	margin:10px 10px 10px;
 	line-height: 30px;
 }
 .btn{
@@ -67,4 +76,9 @@ float: right;
 .btn.dark{
 	background: #222;
 	color:#fff;
+}
+#btn-read{
+	float: right;
+	margin-right: 20px;
+	margin-bottom: 20px;
 }

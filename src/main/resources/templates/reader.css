@@ -4,6 +4,7 @@
   padding-bottom: 0;
 }
 .article, .title{
+  color:#333;
   min-height: auto;
   height: fit-content;
   padding: 0 10px;
@@ -16,7 +17,6 @@
   font-style: italic;
   color: rgba(0, 0, 0, 0.5);
 }
-
 .published span{
   font-weight: 700;
   font-style: normal;

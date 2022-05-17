@@ -31,30 +31,31 @@
 textarea{
   background: #eee;
 }
-textarea::-webkit-scrollbar{
+textarea::-webkit-scrollbar {
   width: 10px;
 }
-textarea::-webkit-scrollbar-thumb{
+textarea::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
-.title, .article{
+.title, .article {
   width: 100%;
   min-height: 100px;
   height:auto;
   outline: none;
   font-size: 36px;
   font-weight: 500;
-  color: #2d2d2d;
+  color: #333;
   resize: none;
   border:none;
   padding: 10px;
   border-radius: 10px;
 }
-.title::placeholder, .article::placeholder{
+.title::placeholder, .article::placeholder {
   color: gray;
 }
 .article{
+  color: #333;
   height: 500px;
   font-size: 18px;
   margin-top: 20px;
@@ -62,8 +63,12 @@ textarea::-webkit-scrollbar-thumb{
   line-height: 30px;
   font-weight: 500;
   padding-bottom: 100px;
+  text-align: justify;
   white-space: pre-wrap;
   /* use white-space to store the spaces in the database */
+}
+.article p {
+  color: #333;
 }
 .blog-options{
   position: fixed;
@@ -82,14 +87,21 @@ textarea::-webkit-scrollbar-thumb{
   outline: none;
   cursor: pointer;
 }
-.btn.cyan{
+.btn.cyan {
 	background: #20c2af;
 	color:#fff;
   font-size: 18px;
   font-weight: 400;
 }
-.btn.grey{
+.btn.grey {
   background: #888;
+  color: #fff;
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: 400; 
+}
+.btn.red{
+  background: rgb(230, 106, 106);
   color: #fff;
   margin-left: 20px;
   font-size: 18px;
