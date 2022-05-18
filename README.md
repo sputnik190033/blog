@@ -33,7 +33,11 @@
 
 ## day3(5.18):
 1. put all the html&css files into maven framework
-2. blog table(use 'text' to store blog content)
+2. created a table for blogs which includes a foreign key(name) of 'user-info' table
+3. added validation to registration form (the pattern of username and password & the repeatition of password)
+4. added HomeController, EditorController, ReaderController
+5. connected all the pages by getMapping 
+6. put new blog into database
 
 ## day4(5.19):
 1. 

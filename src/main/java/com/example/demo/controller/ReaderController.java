@@ -14,22 +14,13 @@ import com.example.demo.repository.UserInfoRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-//@Slf4j
-public class HomeController {
+@Slf4j
+public class ReaderController {
 	
 	@Autowired
 	private UserInfoRepository userInfoRepository;
 	
-	@GetMapping("/editor")
-	public String newBlog() {
+	
+	
 		
-		return "editor";
-	}
-	
-	@GetMapping("/reader")
-	public String readBlog() {
-	
-		return "reader";
-	}
-			
 }
