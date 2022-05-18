@@ -23,21 +23,22 @@ public class LoginController {
 	@GetMapping("/login")
 	public String login() {
 		
-		log.info("login method has been executed");
+		//log.info("login method has been executed");
 		return "login";
 	}
 	
-	@PostMapping("/blog")
+	@PostMapping("/home")
 	public ModelAndView login(@RequestParam("username") String userName,
 		@RequestParam("password") String password, ModelAndView mv) {
 		
 		mv.addObject("userName", userName);
+		//System.err.println(userName);
 		
 		UserInfo userInfo = userInfoRepository.findByName(userName);
 			
 		if(userInfo != null && password.equals(userInfo.getPassword())) {
 			//return "Wblog";
-			mv.setViewName("Wblog");
+			mv.setViewName("home");
 		}else {
 			//return "redirect:/login";
 			mv.setViewName("fail");

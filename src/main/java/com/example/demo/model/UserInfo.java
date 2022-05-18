@@ -26,5 +26,4 @@ public class UserInfo {
 	private String password;
 	
 	
-	
 }

@@ -44,18 +44,18 @@ a:hover{
 }
 .text_input{
 	background-color: whitesmoke; 
-	color:aquamarine;
+	color:#444;
 	text-align: left; 
 	line-height: 1.6;
 }
 #submit_button{
 	text-align: center; 
 	color: white; 
-	background-color: #04aa97; 
+	background-color: rgb(57, 233, 199);
 	height: 50px;
 }
 #submit_button:hover{
-	background-color: lightgreen;
+	background-color: rgb(152, 253, 234);
 }
 #sign_in{
 	background-color: gainsboro; 

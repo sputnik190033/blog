@@ -1,0 +1,110 @@
+
+.banner{
+  width: 100%;
+  height: 400px;
+  position: relative;
+  background-color: gainsboro;
+  background-size: cover;
+  background-position: center;
+}
+.banner-upload-btn{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 150px;
+  height: 60px;
+  border-radius: 30px;
+  background: rgba(69, 65, 65, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.blog{
+  width:70vw;
+  min-width: 400px;
+  height: 100px;
+  display: block;
+  margin: auto;
+  padding: 50px 0;
+}
+textarea{
+  background: #eee;
+}
+textarea::-webkit-scrollbar {
+  width: 10px;
+}
+textarea::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.title, .article {
+  width: 100%;
+  min-height: 100px;
+  height:auto;
+  outline: none;
+  font-size: 36px;
+  font-weight: 500;
+  color: #333;
+  resize: none;
+  border:none;
+  padding: 10px;
+  border-radius: 10px;
+}
+.title::placeholder, .article::placeholder {
+  color: gray;
+}
+.article{
+  color: #333;
+  height: 500px;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 120px;
+  line-height: 30px;
+  font-weight: 500;
+  padding-bottom: 100px;
+  text-align: justify;
+  white-space: pre-wrap;
+  /* use white-space to store the spaces in the database */
+}
+.article p {
+  color: #333;
+}
+.blog-options{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: #ccc;
+  display: flex;
+  z-index: 9;
+  justify-content: center;
+  align-items: center;
+}
+.btn{
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.btn.cyan {
+	background: #20c2af;
+	color:#fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+.btn.grey {
+  background: #888;
+  color: #fff;
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: 400; 
+}
+.btn.red{
+  background: rgb(230, 106, 106);
+  color: #fff;
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: 400; 
+}
+

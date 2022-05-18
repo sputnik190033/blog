@@ -32,7 +32,8 @@
 3. blog reader page (completed)
 
 ## day3(5.18):
-1. 
+1. put all the html&css files into maven framework
+2. blog table(use 'text' to store blog content)
 
 ## day4(5.19):
 1. 
