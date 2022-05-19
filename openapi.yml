@@ -1,0 +1,110 @@
+openapi: '3.0.2'
+info:
+  title: blog system
+  description: this is an indie gaming blog system made by Yanhe Wang
+  version: '1.0'
+servers:
+  - url: https://localhost:8080
+paths:
+  /login:
+    get:
+      tags:
+        - users
+      description: 'return login page'
+      operationId: login
+      responses:
+        '200':
+          description: OK
+          content:
+            text/html:    
+              schema:
+                $ref: "#/components/schemas/LoginHtml"
+  /home:  
+    post:
+      tags:
+        - users
+      description: 'get and check user info input then return home page'
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          text/json:
+            schema:
+              type: "object"
+              properties:
+                username:
+                  type: "string"
+                password:
+                  type: "string"
+      responses:
+        '200':
+          description: OK
+          content:
+            text/html:    
+              schema:
+                $ref: "#/components/schemas/Login"
+
+  /register:  
+    get:
+      tags:
+        - users
+      description: 'return register page'
+      operationId: getRegisterView
+      requestBody:
+        required: true
+        content:
+          text/html: 
+            schema:
+              type: "string"        
+      responses:
+        '200':
+          description: OK
+          content:
+            text/html:    
+              schema:
+                $ref: "#/components/schemas/Login"
+
+    post:
+      tags:
+        - users
+      description: 'get user info input and put them into database'
+      operationId: register
+      requestBody:
+        required: true
+        content:
+          text/json:
+            schema:
+              type: "object"
+              properties:
+                username:
+                  type: "string"
+                password:
+                  type: "string"
+      responses:
+        '200':
+          description: OK
+          content:
+            text/html:    
+              schema:
+                $ref: "#/components/schemas/Login"
+
+components:
+  schemas:
+    LoginHtml:
+      type: "string"
+    Login:
+      type: "object"
+      properties:
+        username:
+          type: "string"
+        view:
+          type: "string"
+    RegisterHtml:
+      type: "string"
+    Register:
+      type: "object"
+      properties:
+        username:
+          type: "string"
+        password:
+          type: "string"
