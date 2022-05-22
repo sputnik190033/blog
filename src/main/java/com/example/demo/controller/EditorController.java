@@ -42,8 +42,8 @@ public class EditorController {
 					.build();//
 
 			blogInfoRepository.save(blogInfo);
-
-			//mv.addObject("username", username);
+			//---------------------------------------------------------thymeleaf is problematic here!
+			mv.addObject("theblog", blogInfoRepository.findById(blogInfo.getId()));
 			mv.setViewName("reader");
 			
 		return mv;

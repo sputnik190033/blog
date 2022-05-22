@@ -31,15 +31,18 @@
   <div class="banner"></div>
 
   <div class="blog">
-    <h1 class="title">Undertale -- Brief Intro</h1>
+    <h1 class="title" th:text = "${theblog.title}"></h1>
     <p class="published"><span>Published by - </span></p>
     <div class="article">
-      <p>
+      <p th:text="${theblog.content}"></p>
+     <!--
+	 <p>
         Undertale is a 2015 2D role-playing video game created by American indie developer Toby Fox. The player controls a child who has fallen into the Underground: a large, secluded region under the surface of the Earth, separated by a magical barrier. The player meets various monsters during the journey back to the surface, although some monsters might engage the player in a fight. The combat system involves the player navigating through mini-bullet hell attacks by the opponent. They can opt to pacify or subdue monsters in order to spare them instead of killing them. These choices affect the game, with the dialogue, characters, and story changing based on outcomes.
       </p>  
       <p>
         Outside of artwork and character designs by Temmie Chang, Fox developed the entirety of the game by himself, including the script and music. The game took inspiration from several sources, including the Brandish, Mario & Luigi, and Mother role-playing game series, bullet hell shooter series Touhou Project, role-playing game Moon: Remix RPG Adventure, and British comedy show Mr. Bean. Originally, Undertale was meant to be two hours in length and was set to be released in mid-2014. However, development was delayed over the next three years.
       </p>
+      -->
     </div>
   </div>
 

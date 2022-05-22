@@ -10,6 +10,7 @@ import com.example.demo.model.UserInfo;
 public interface BlogInfoRepository extends JpaRepository<BlogInfo,Long>{
 
 	BlogInfo findByName(String name);
+
 	
 	
 }
