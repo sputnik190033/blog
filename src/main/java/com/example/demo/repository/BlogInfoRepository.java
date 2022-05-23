@@ -9,7 +9,7 @@ import com.example.demo.model.UserInfo;
 @Repository
 public interface BlogInfoRepository extends JpaRepository<BlogInfo,Long>{
 
-	BlogInfo findByName(String name);
+	BlogInfo findById(long id);
 
 	
 	
