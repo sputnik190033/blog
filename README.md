@@ -40,5 +40,15 @@
 6. put new blog into database
 
 ## day4(5.19):
-1. 
+1. activity diagram 
+2. class diagram
+3. openapi (10%)
+
+## day5(5.20):
+1. openapi (100%)
+
+## day6(5.23)
+1. printed username to navigation bar
+2. printed newly added blog to reader page
+
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,22 +17,20 @@
 
 	<div class="topnav">
 		<a href="editor">New Blog</a>
-		<a class="active" href="#">Home</a>		
+		<a class="active" href="#">Home</a>	
+		<span th:text="|Welcome, ${username}|" name="username"></span>	
 	</div>
 
 	<div class="header">
 	</div>
 
 	<section class="blog-section">
-		<div class="blog-card">
+	<!--	<div class="blog-card" th:each="{blog : ${blogList}">
 			<img src="/img/undertale.jpg" class = "blog-image" alt="">
-			<h1 class="blog-title">Undertale</h1>
-			<p class="blog-overview">
-			 Undertale is a 2015 2D role-playing video game created by American indie developer Toby Fox. The player controls a child who has fallen into the Underground: a large, secluded region under the surface of the Earth, separated by a magical barrier. The player meets various monsters during the journey back to the surface, although some monsters might engage the player in a fight. The combat system involves the player navigating through mini-bullet hell attacks by the opponent. They can opt to pacify or subdue monsters in order to spare them instead of killing them. These choices affect the game, with the dialogue, characters, and story changing based on outcomes.
-    
-			</p>
+			<h1 class="blog-title" th:text="${blog.title}"></h1>
+			<p class="blog-overview" th:text="${blog.content}"></p>
 			<a href="reader" class="btn dark" id="btn-read">read</a>
-		</div>
+		</div> -->
 		
 		<div class="blog-card">
 			<img src="/img/disco.jpeg" class = "blog-image" alt="">
@@ -42,7 +40,7 @@
     
 			</p>
 			<a href="reader" class="btn dark" id="btn-read">read</a>
-		</div>
+		</div> 
 	</section>
 
 </body>

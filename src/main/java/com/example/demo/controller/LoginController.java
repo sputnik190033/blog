@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.UserInfo;
+import com.example.demo.repository.BlogInfoRepository;
 import com.example.demo.repository.UserInfoRepository;
 
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +20,8 @@ public class LoginController {
 	
 	@Autowired
 	private UserInfoRepository userInfoRepository;
+	@Autowired
+	private BlogInfoRepository blogInfoRepository;
 	
 	@GetMapping("/login")
 	public String login() {
@@ -31,7 +34,8 @@ public class LoginController {
 	public ModelAndView login(@RequestParam("username") String userName,
 		@RequestParam("password") String password, ModelAndView mv) {
 		
-		mv.addObject("userName", userName);
+		mv.addObject("username", userName);
+		mv.addObject("blogList", blogInfoRepository.findAll());
 		//System.err.println(userName);
 		
 		UserInfo userInfo = userInfoRepository.findByName(userName);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,16 +25,17 @@
   <div class="topnav">
 		<a href="editor">New Blog</a>
 		<a href="home">Home</a>	
-    <a href="#" class="active">Blog</a>	
+   		<a href="#" class="active">Blog</a>	
+   		<span th:text="${username}" name="username"></span>	
 	</div>
 
   <div class="banner"></div>
 
   <div class="blog">
-    <h1 class="title" th:text = "${theblog.title}"></h1>
-    <p class="published"><span>Published by - </span></p>
+    <h1 class="title" th:text = "${theBlogTitle}"></h1>
+    <p class="published"><span>Published by - <span th:text="${username}"></span></span></p>
     <div class="article">
-      <p th:text="${theblog.content}"></p>
+      <p th:text="${theBlogContent}"></p>
      <!--
 	 <p>
         Undertale is a 2015 2D role-playing video game created by American indie developer Toby Fox. The player controls a child who has fallen into the Underground: a large, secluded region under the surface of the Earth, separated by a magical barrier. The player meets various monsters during the journey back to the surface, although some monsters might engage the player in a fight. The combat system involves the player navigating through mini-bullet hell attacks by the opponent. They can opt to pacify or subdue monsters in order to spare them instead of killing them. These choices affect the game, with the dialogue, characters, and story changing based on outcomes.

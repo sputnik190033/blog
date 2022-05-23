@@ -31,19 +31,21 @@ public class EditorController {
 	
 	@PostMapping("/publish")
 	public ModelAndView publish(//
+			@RequestParam("username") String username,//
 			@RequestParam("blog_title") String blogTitle, //
 			@RequestParam("blog_content") String blogContent, //
 			ModelAndView mv) {
 
 			BlogInfo blogInfo = BlogInfo.builder()// builder is a static method
-					.name("admin")//
-					.blog_title(blogTitle)//
-					.blog_content(blogContent)//
+					.name(username)//
+					.title(blogTitle)//
+					.content(blogContent)//
 					.build();//
 
 			blogInfoRepository.save(blogInfo);
-			//---------------------------------------------------------thymeleaf is problematic here!
-			mv.addObject("theblog", blogInfoRepository.findById(blogInfo.getId()));
+			mv.addObject("theBlogTitle", blogTitle);
+			mv.addObject("theBlogContent", blogContent);
+			mv.addObject("username", username);
 			mv.setViewName("reader");
 			
 		return mv;

@@ -29,10 +29,10 @@ public class BlogInfo {
 	private String name;
 
 	@Column(name="title")
-	private String blog_title;
+	private String title;
 	
 	@Column(name="content")
-	private String blog_content;
+	private String content;
 	
 	
 }
