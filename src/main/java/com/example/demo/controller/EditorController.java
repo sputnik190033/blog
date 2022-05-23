@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -25,7 +27,8 @@ public class EditorController {
 	private BlogInfoRepository blogInfoRepository;
 	
 	@GetMapping("/home")
-	public String backHome() { // return html page
+	public String backHome(@RequestParam("username") String username, Map<String, Object> map) { // return html page
+		map.put("username", username);
 		return "home";
 	}
 	

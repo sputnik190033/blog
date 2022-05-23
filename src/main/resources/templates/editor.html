@@ -23,8 +23,8 @@
 
 	<div class="topnav">
 		<a class="active" href="#">New Blog</a>
-		<a href="home">Home</a>
-		<span th:text="${username}" name="username"></span>	
+		<a th:href="@{/home(username=${username})}">Home</a>
+		<span name="username" th:text="${username}" ></span>	
 	</div>
 
 	<div class="banner">
@@ -36,8 +36,8 @@
 		</label>
 	</div>
 	<form action="/publish" method="post">
-		<div class="blog">
-
+		<input type="hidden" name="username" th:value="${username}">
+		<div class="blog">		
 			<textarea type="text" class="title" name="blog_title" placeholder="Blog Title..." required></textarea>
 			<textarea type="text" class="article" name="blog_content" placeholder="Write down something here..."
 				required></textarea>

@@ -16,7 +16,7 @@
 <body>
 
 	<div class="topnav">
-		<a href="editor">New Blog</a>
+		<a th:href="@{/editor(username=${username})}">New Blog</a>
 		<a class="active" href="#">Home</a>	
 		<span th:text="|Welcome, ${username}|" name="username"></span>	
 	</div>
@@ -39,7 +39,7 @@
 			Disco Elysium takes place in a large city still recovering from a war decades prior to the game's start, with players taking the role of an amnesiac detective who has been tasked with solving a murder mystery. During the investigation, he comes to recall events about his own past as well as current forces trying to affect the city. 
     
 			</p>
-			<a href="reader" class="btn dark" id="btn-read">read</a>
+			<a th:href="@{/reader(username=${username})}" class="btn dark" id="btn-read">read</a>
 		</div> 
 	</section>
 
