@@ -53,8 +53,9 @@
 3. transfered username to all the pages using username=${username} to fake a logging-in status
    (will try to follow the spring security tutorial to make it legit if I have spare time after implementing all the basic functions)
    link: https://spring.io/guides/gs/securing-web/ 
-4. showed line breaks in thymeleaf
-5. added mutiline ellipsis in blog preview card (webkit only)
+4. showed all the blogs as blog cards at the home page
+5. showed line breaks in thymeleaf
+6. added mutiline ellipsis in blog preview card (webkit only)
 
 
 - [ ] how to put the content of a blog into the editor?
