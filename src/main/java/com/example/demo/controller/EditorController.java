@@ -3,18 +3,21 @@ package com.example.demo.controller;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.origin.SystemEnvironmentOrigin;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.thymeleaf.expression.Arrays;
 
 import com.example.demo.model.BlogInfo;
 import com.example.demo.model.UserInfo;
 import com.example.demo.repository.BlogInfoRepository;
 import com.example.demo.repository.UserInfoRepository;
 
+import lombok.experimental.var;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -27,9 +30,11 @@ public class EditorController {
 	private BlogInfoRepository blogInfoRepository;
 	
 	@GetMapping("/home")
-	public String backHome(@RequestParam("username") String username, Map<String, Object> map) { // return html page
+	public ModelAndView backHome(@RequestParam("username") String username, Map<String, Object> map, ModelAndView mv) { // return html page
 		map.put("username", username);
-		return "home";
+		mv.addObject("blogList", blogInfoRepository.findAll());
+		mv.setViewName("home");
+		return mv;
 	}
 	
 	@PostMapping("/publish")
@@ -46,8 +51,9 @@ public class EditorController {
 					.build();//
 
 			blogInfoRepository.save(blogInfo);
+			
 			mv.addObject("theBlogTitle", blogTitle);
-			mv.addObject("theBlogContent", blogContent);
+			mv.addObject("theBlogContent", blogContent); //replaceAll("\n", "<br />")
 			mv.addObject("username", username);
 			mv.setViewName("reader");
 			

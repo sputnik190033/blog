@@ -58,7 +58,7 @@ float: right;
 .blog-card{
 	border:none;
 	border-radius: 10px;
-	box-shadow: 10px 10px 5px #aaaaaa;
+	box-shadow: 10px 10px 5px #aaaaaa;	
 }
 .blog-image{
 	width: 100%;
@@ -66,17 +66,28 @@ float: right;
 	object-fit: cover;
 	border-radius: 10px;
 	margin-bottom: 10px;
-	
 }
 .blog-title{
-	margin:0px 10px 10px;
+	margin:5px 10px 10px;
+	font-size: 36px;
+}
+.blog-overview-container{
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	position: relative;
+	display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
 .blog-overview{
-	margin:10px 10px 10px;
+	margin:15px 15px 15px;
 	line-height: 30px;
+	white-space: pre-line;	
 }
 .btn{
-  padding:10px 20px;
+  padding:15px 20px;
 	border-radius: 10px;
 	background: rgba(255, 255, 255, 0.7);
 	color:#333;

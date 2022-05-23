@@ -11,7 +11,7 @@
 		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 	<title>home page</title>
-
+	
 </head>
 <body>
 
@@ -25,21 +25,23 @@
 	</div>
 
 	<section class="blog-section">
-	<!--	<div class="blog-card" th:each="{blog : ${blogList}">
+		<div class="blog-card" th:each="blog : ${blogList}">
 			<img src="/img/undertale.jpg" class = "blog-image" alt="">
 			<h1 class="blog-title" th:text="${blog.title}"></h1>
-			<p class="blog-overview" th:text="${blog.content}"></p>
+			<div class="blog-overview-container">
+			 	<span class="blog-overview" th:text="${blog.content}" style="white-space:normal"></span>
+			</div>
 			<a href="reader" class="btn dark" id="btn-read">read</a>
-		</div> -->
+		</div> 
 		
-		<div class="blog-card">
+	<!--	<div class="blog-card">
 			<img src="/img/disco.jpeg" class = "blog-image" alt="">
 			<h1 class="blog-title">Disco Elysium</h1>
 			<p class="blog-overview">
 			Disco Elysium takes place in a large city still recovering from a war decades prior to the game's start, with players taking the role of an amnesiac detective who has been tasked with solving a murder mystery. During the investigation, he comes to recall events about his own past as well as current forces trying to affect the city. 
-    
 			</p>
 			<a th:href="@{/reader(username=${username})}" class="btn dark" id="btn-read">read</a>
+	  -->
 		</div> 
 	</section>
 

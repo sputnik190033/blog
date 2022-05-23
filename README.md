@@ -10,7 +10,7 @@
 
 ## backend:
 - [x] how to put new blog into database?
-- [ ] how to show each blog as blog cards?
+- [x] how to show each blog as blog cards?
 - [ ] how to store images that have been uploaded?
 - [ ] how to put images into banners?
 - [ ] how to put the content of a blog into the editor?
@@ -50,8 +50,14 @@
 ## day6(5.23)
 1. printed username to navigation bar at home page
 2. printed newly added blog to reader page
-3. printed username to editor&reader page using username=${username} to fake a logging-in status
+3. transfered username to all the pages using username=${username} to fake a logging-in status
    (will try to follow the spring security tutorial to make it legit if I have spare time after implementing all the basic functions)
    link: https://spring.io/guides/gs/securing-web/ 
+4. showed line breaks in thymeleaf
+5. added mutiline ellipsis in blog preview card (webkit only)
+
+
+- [ ] how to put the content of a blog into the editor?
+- [ ] how to delete a blog?
 
 

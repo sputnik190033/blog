@@ -40,7 +40,7 @@
 		<h1 class="title" th:text="${theBlogTitle}"></h1>
 		<p class="published"><span>Published by - <span th:text="${username}"></span></span></p>
 		<div class="article">
-			<p th:text="${theBlogContent}"></p>
+			<p th:utext="${theBlogContent}" style="white-space: pre-line;"></p>
 			<!--
 	 <p>
         Undertale is a 2015 2D role-playing video game created by American indie developer Toby Fox. The player controls a child who has fallen into the Underground: a large, secluded region under the surface of the Earth, separated by a magical barrier. The player meets various monsters during the journey back to the surface, although some monsters might engage the player in a fight. The combat system involves the player navigating through mini-bullet hell attacks by the opponent. They can opt to pacify or subdue monsters in order to spare them instead of killing them. These choices affect the game, with the dialogue, characters, and story changing based on outcomes.
