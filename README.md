@@ -10,11 +10,11 @@
 
 ## backend:
 - [x] how to put new blog into database?
-- [] how to show each blog as blog cards?
-- [] how to store images that have been uploaded?
-- [] how to put images into banners?
-- [] how to put the content of a blog into the editor?
-- [] how to delete a blog?
+- [ ] how to show each blog as blog cards?
+- [ ] how to store images that have been uploaded?
+- [ ] how to put images into banners?
+- [ ] how to put the content of a blog into the editor?
+- [ ] how to delete a blog?
 - [x] how to show username at the top left corner of the page?
 
 ---
