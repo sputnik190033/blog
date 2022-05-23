@@ -2,9 +2,9 @@
 ## frontend:
 1. login page (completed)
 2. register page (completed)
-3. home page (developing)
-4. text editor page (developing)
-5. blog reader page
+3. home page (completed)
+4. text editor page (completed)
+5. blog reader page (completed)
 
 ---
 
