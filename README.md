@@ -16,6 +16,7 @@
 - [x] delete a blog
 - [x] show the right author of the blog
 - [x] how to put the content of a blog into the editor?
+- [x] how to add word amount restriction to textarea in html?
 - [ ] how to store images that have been uploaded?
 - [ ] how to put images into banners?
 
@@ -67,10 +68,10 @@
 1. put the content of a blog into the editor when press edit button from reader page
 2. implemented the function of updating a blog
 3. implemented spring security（logging out unfinished)
-4. 
+4. added word count limit to the textarea of titles
 
+- [ ] add author to new blog by new method ((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())
 - [ ] authenticate if the user can edit the blog
-- [ ] how to add word amount restriction to textarea in html?
 - [ ] @{/builder(username=${username})}?
 
 

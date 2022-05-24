@@ -43,7 +43,8 @@
 		<input type="hidden" name="blogId" th:value="${theBlogId}">
 		
 		<div class="blog">		
-			<textarea type="text" class="title" name="blog_title" placeholder="Blog Title..." required th:text="${theBlogTitle}"></textarea>
+			<textarea type="text" class="title" name="blog_title" placeholder="Blog Title (max length: 80 characters)" 
+				maxlength="80" required th:text="${theBlogTitle}"></textarea>
 			<textarea type="text" class="article" name="blog_content" placeholder="Write down something here..." th:text="${theBlogContent}"
 				required></textarea>
 		</div>
