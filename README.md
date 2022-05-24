@@ -66,8 +66,11 @@
 ## day7(5.24)
 1. put the content of a blog into the editor when press edit button from reader page
 2. implemented the function of updating a blog
+3. implemented spring security（logging out unfinished)
+4. 
 
 - [ ] authenticate if the user can edit the blog
 - [ ] how to add word amount restriction to textarea in html?
+- [ ] @{/builder(username=${username})}?
 
 

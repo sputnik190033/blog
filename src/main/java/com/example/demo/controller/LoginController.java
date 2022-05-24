@@ -30,11 +30,18 @@ public class LoginController {
 		return "login";
 	}
 	
+<<<<<<< Updated upstream
 	@PostMapping("/home")
 	public ModelAndView login(@RequestParam("username") String userName,
 		@RequestParam("password") String password, ModelAndView mv) {
 		
 		mv.addObject("username", userName);
+=======
+	@GetMapping("/")
+	public ModelAndView login(ModelAndView mv) {
+		
+		//mv.addObject("username", userName);
+>>>>>>> Stashed changes
 		mv.addObject("blogList", blogInfoRepository.findAll());
 		//System.err.println(userName);
 		
