@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.origin.SystemEnvironmentOrigin;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,24 +31,23 @@ public class LoginController {
 		return "login";
 	}
 	
-	@PostMapping("/home")
-	public ModelAndView login(@RequestParam("username") String userName,
-		@RequestParam("password") String password, ModelAndView mv) {
-		
-		mv.addObject("username", userName);
+	@GetMapping("/")
+	public ModelAndView login(ModelAndView mv) {
+		System.out.println("!!!!!");
+		//mv.addObject("username", userName);
 		mv.addObject("blogList", blogInfoRepository.findAll());
 		//System.err.println(userName);
 		
-		UserInfo userInfo = userInfoRepository.findByName(userName);
+		//UserInfo userInfo = userInfoRepository.findByName(userName);
 			
-		if(userInfo != null && password.equals(userInfo.getPassword())) {
-			//return "Wblog";
-			mv.setViewName("home");
-		}else {
-			//return "redirect:/login";
-			mv.setViewName("fail");
-		}
-		
+//		if(userInfo != null && password.equals(userInfo.getPassword())) {
+//			//return "Wblog";
+//			mv.setViewName("home");
+//		}else {
+//			//return "redirect:/login";
+//			mv.setViewName("fail");
+//		}
+		mv.setViewName("home");
 		return mv;
 	}	
 }

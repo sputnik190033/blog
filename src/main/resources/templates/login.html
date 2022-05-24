@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>login</title>
-<link rel="stylesheet" type="text/css" href="/css/signUpIn.css">
+
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Ubuntu">
 <link rel="stylesheet"
 	href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-
+<link rel="stylesheet" type="text/css" th:href="@{/css/signUpIn.css}">
 </head>
 
 <body>
@@ -17,7 +17,11 @@
 		<br>
 		<hr>
 		<br>
-		<form action="http://localhost:8080/home" method="post">
+		<div th:if="${param.error}" class="error" align="center">
+		Invalid user name or password!
+		</div>
+		
+		<form action="@{/login}" method="post">
 			<label for="username" class="desc">Username</label> 
 			<input
 				type="text" id="username" class="text_input" name="username"
@@ -34,6 +38,7 @@
 		</form>
 		<br>
 		<p id="sign_in">Do not have an account? <a href="register">Register </a> </p>
+		
 	</div>
 </body>
 </html>

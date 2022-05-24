@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.origin.SystemEnvironmentOrigin;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,6 +23,7 @@ public class RegisterController {
 
 	@GetMapping("/register")
 	public String getRegisterView() { // return html page
+		//System.out.println((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
 		return "register";
 	}
 
