@@ -25,7 +25,7 @@
 		<a th:href="@{/builder(username=${username})}">New Blog</a>
 		<a th:href="@{/home(username=${username})}">Home</a>
 		<a class="active" href="#">Editor</a>
-		<span name="username" th:text="${username}" ></span>	
+		<span name="username" th:text="${#httpServletRequest.remoteUser}" ></span>	
 	</div>
 
 	<div class="banner">

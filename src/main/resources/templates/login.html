@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<div style= "width: 30%;">
+	<div style= "width: 30%;" class="frame">
 		<h1>LOGIN</h1>
 		<br>
 		<hr>
@@ -21,7 +21,7 @@
 		Invalid user name or password!
 		</div>
 		
-		<form action="@{/login}" method="post">
+		<form th:action="@{/login}" method="post">
 			<label for="username" class="desc">Username</label> 
 			<input
 				type="text" id="username" class="text_input" name="username"

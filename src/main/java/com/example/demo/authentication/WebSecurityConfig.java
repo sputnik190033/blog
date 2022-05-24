@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.*;
@@ -33,16 +34,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.disable();
 	}
 
-	@Bean
 	@Override
-	public UserDetailsService userDetailsService() {
-		UserDetails user =
-			 User.withDefaultPasswordEncoder()
-				.username("user")
-				.password("password")
-				.roles("USER")
-				.build();
-
-		return new InMemoryUserDetailsManager(user);
+	public void configure(WebSecurity web) throws Exception {
+	  web
+	    .debug(false)
+	    .ignoring()
+	    .antMatchers("/images/**", "/js/**", "/css/**");
 	}
+	
+//	@Bean
+//	@Override
+//	public UserDetailsService userDetailsService() {
+//		UserDetails user =
+//			 User.withDefaultPasswordEncoder()
+//				.username("user")
+//				.password("password")
+//				.roles("USER")
+//				.build();
+//
+//		return new InMemoryUserDetailsManager(user);
+//	}
 }

@@ -12,7 +12,7 @@ h1{
 	font-size: 40px; 
 	padding:1%;
 }
-div{
+.frame{
 	border: none; 
 	background-color: white;
 	border-radius: 20px; 
@@ -22,6 +22,9 @@ div{
 	margin-right: auto;
 	margin-top: 4%;
 	padding:2%;
+}
+.error{
+	color:rgb(245, 116, 102);
 }
 hr{
 	border: solid 0.5px lightgray;

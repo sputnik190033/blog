@@ -30,16 +30,23 @@ public class LoginController {
 		//log.info("login method has been executed");
 		return "login";
 	}
-	
+//	@PostMapping("/home")
+//	public ModelAndView login(@RequestParam("username") String userName,
+//		@RequestParam("password") String password, ModelAndView mv) {
+//		
+//		mv.addObject("username", userName);
+
+
 	@GetMapping("/")
 	public ModelAndView login(ModelAndView mv) {
-		System.out.println("!!!!!");
-		//mv.addObject("username", userName);
-		mv.addObject("blogList", blogInfoRepository.findAll());
-		//System.err.println(userName);
 		
-		//UserInfo userInfo = userInfoRepository.findByName(userName);
-			
+		//mv.addObject("username", userName);
+		
+		mv.addObject("blogList", blogInfoRepository.findAll());
+		
+//		UserInfo userInfo = userInfoRepository.findByName(userName);
+//			
+
 //		if(userInfo != null && password.equals(userInfo.getPassword())) {
 //			//return "Wblog";
 //			mv.setViewName("home");

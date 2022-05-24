@@ -24,7 +24,7 @@
 	<div class="topnav">
 		<a class="active" href="#">New Blog</a>
 		<a th:href="@{/home(username=${username})}">Home</a>
-		<span name="username" th:text="${username}" ></span>	
+		<span name="username" th:text="${#httpServletRequest.remoteUser}" ></span>	
 	</div>
 
 	<div class="banner">
