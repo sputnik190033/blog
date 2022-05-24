@@ -35,10 +35,27 @@ public class ReaderController {
 		blogInfoRepository.delete(blogInfo);
 		
 		mv.addObject("blogList", blogInfoRepository.findAll());
-		mv.setViewName("home");
+		mv.setViewName("home");	
+		return mv;
+	}	
+	
+	@GetMapping("/editor")
+	public ModelAndView editBlog(//
+			@RequestParam("username") String username,//
+			@RequestParam("blogId") long blogId,//
+			Map<String, Object> map, //
+			ModelAndView mv
+			) {
+		map.put("username", username);
 		
+		BlogInfo blogInfo = blogInfoRepository.findById(blogId);		
+		mv.addObject("theBlogId", blogId);
+		mv.addObject("theBlogAuthor", blogInfo.getName());
+		mv.addObject("theBlogTitle", blogInfo.getTitle());
+		mv.addObject("theBlogContent", blogInfo.getContent()); 
+			
+		mv.setViewName("editor");	
 		return mv;
 	}
-	
 		
 }

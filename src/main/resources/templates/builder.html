@@ -22,9 +22,8 @@
 <body>
 
 	<div class="topnav">
-		<a th:href="@{/builder(username=${username})}">New Blog</a>
+		<a class="active" href="#">New Blog</a>
 		<a th:href="@{/home(username=${username})}">Home</a>
-		<a class="active" href="#">Editor</a>
 		<span name="username" th:text="${username}" ></span>	
 	</div>
 
@@ -36,15 +35,12 @@
 			</span>
 		</label>
 	</div>
-	
-	
-	<form action="/update" method="post">
+	<form action="/publish" method="post">
 		<input type="hidden" name="username" th:value="${username}">
 		<input type="hidden" name="blogId" th:value="${theBlogId}">
-		
 		<div class="blog">		
-			<textarea type="text" class="title" name="blog_title" placeholder="Blog Title..." required th:text="${theBlogTitle}"></textarea>
-			<textarea type="text" class="article" name="blog_content" placeholder="Write down something here..." th:text="${theBlogContent}"
+			<textarea type="text" class="title" name="blog_title" placeholder="Blog Title..." required></textarea>
+			<textarea type="text" class="article" name="blog_content" placeholder="Write down something here..."
 				required></textarea>
 		</div>
 

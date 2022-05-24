@@ -25,12 +25,15 @@ public class HomeController {
 	@Autowired
 	private BlogInfoRepository blogInfoRepository;
 
-	@GetMapping("/editor")
-	public String editor(//
-			@RequestParam("username") String username, //
-			Map<String, Object> map) { 
-		map.put("username", username);
-		return "editor"; 
+	@GetMapping("/builder")
+	public ModelAndView editBlog(//
+			@RequestParam("username") String username,//
+			Map<String, Object> map, //
+			ModelAndView mv
+			) {
+		map.put("username", username);	
+		mv.setViewName("builder");	
+		return mv;
 	}
 
 	@GetMapping("/reader")

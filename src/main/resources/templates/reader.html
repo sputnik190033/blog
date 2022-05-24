@@ -28,7 +28,7 @@
 <body>
 
 	<div class="topnav">
-		<a th:href="@{/editor(username=${username})}">New Blog</a>
+		<a th:href="@{/builder(username=${username})}">New Blog</a>
 		<a th:href="@{/home(username=${username})}">Home</a>
 		<a href="#" class="active">Blog</a>
 		<span th:text="${username}" name="username"></span>
@@ -63,7 +63,9 @@
 		</form>
 		
 		<form action="/editor" method="get">
-			<button class="btn grey edit-btn">
+		<input type="hidden" name="username" th:value="${username}">
+		<input type="hidden" name="blogId" th:value="${theBlogId}">
+			<button class="btn grey edit-btn" type="submit">
 				<span class="material-symbols-outlined" style="vertical-align: sub;">
 					edit_note
 				</span>
@@ -79,6 +81,8 @@
 				delete
 			</span>delete</button>
 		</form>
+		
+		
 	</div>
 
 </body>

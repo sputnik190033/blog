@@ -15,9 +15,10 @@
 - [x] show username at the top left corner of each page
 - [x] delete a blog
 - [x] show the right author of the blog
+- [x] how to put the content of a blog into the editor?
 - [ ] how to store images that have been uploaded?
 - [ ] how to put images into banners?
-- [ ] how to put the content of a blog into the editor?
+
 
 ---
 
@@ -63,9 +64,10 @@
 9. showed the right author of the blog
 
 ## day7(5.24)
+1. put the content of a blog into the editor when press edit button from reader page
+2. implemented the function of updating a blog
 
 - [ ] authenticate if the user can edit the blog
-- [ ] how to put the content of a blog into the editor when press edit button from reader page?
 - [ ] how to add word amount restriction to textarea in html?
 
 
