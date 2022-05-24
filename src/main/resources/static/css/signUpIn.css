@@ -36,10 +36,10 @@ input{
 	height: 40px; 
 	margin: 0.5%;
 }
-a{
+.anchor{
 	color: dodgerblue;
 }
-a:hover{
+.anchor:hover{
 	color: turquoise;
 }
 .desc{
