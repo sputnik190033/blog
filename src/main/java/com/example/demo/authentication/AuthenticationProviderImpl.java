@@ -35,8 +35,6 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
         if (Objects.equals(password, "") || !Objects.equals(password, storedPassword)) {
             throw new BadCredentialsException("illegal id or passowrd");
         }
-
-        System.out.println(name+" "+password);
         
         final Object principal = authentication.getPrincipal();
         final UsernamePasswordAuthenticationToken result = new UsernamePasswordAuthenticationToken(

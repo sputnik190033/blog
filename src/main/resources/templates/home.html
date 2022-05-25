@@ -33,7 +33,7 @@
 	</div>
 
 	<section class="blog-section">
-		<div class="blog-card" th:each="blog : ${blogList}">
+		<div class="blog-card bounce" th:each="blog : ${blogList}">
 		  <form action="/reader" type="get">
 			<img src="/img/disco.jpeg" class = "blog-image" alt="">
 			<h1 class="blog-title" th:text="${blog.title}"></h1>

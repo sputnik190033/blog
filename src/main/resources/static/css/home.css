@@ -5,7 +5,9 @@
 .topnav {
 	background-color: #333;
 	overflow: hidden;
-	
+	position: sticky;
+	position: -webkit-sticky; 
+  	top: 0;
 }
 /* Style the links inside the navigation bar */
 .topnav a{
@@ -82,7 +84,22 @@
 .blog-card{
 	border:none;
 	border-radius: 10px;
-	box-shadow: 10px 10px 5px #aaaaaa;	
+	box-shadow: 10px 10px 10px #aaaaaa, -10px 10px 10px #aaaaaa;
+	background-color: white;
+	
+	animation-duration: 1s;
+    animation-iteration-count: 2;
+    transform-origin: bottom;	
+}
+.blog-card:hover{
+	box-shadow: 15px 15px 10px #aaaaaa, -15px 15px 10px #aaaaaa;
+	animation-name: bounce;
+    animation-timing-function: ease;
+}
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
 }
 .blog-image{
 	width: 100%;
@@ -131,3 +148,4 @@
 #btn-read:hover{
 	background-color: #20c2af;
 }
+

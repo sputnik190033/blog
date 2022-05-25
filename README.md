@@ -76,14 +76,12 @@
 2. add author to new blog by new method ((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())
 3. made a button for logging out in top navbar
 4. implemented the authorization checking if the user can edit or delete the blog
+5. made top navbar sticky
+6. blog-card hovering animation 
+7. showed placeholder image at the banner of reader and editor page
 
-animation effect
-homepage: topnav: move while scrolling
-blog-card: fload while hovering
-
-randomize the image of each blog card
-show image at the banner of reader's page
 
 register page: return a div if password != password
 
 
+add date to each blog
