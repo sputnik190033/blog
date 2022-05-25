@@ -77,11 +77,9 @@
 3. made a button for logging out in top navbar
 4. implemented the authorization checking if the user can edit or delete the blog
 5. made top navbar sticky
-6. blog-card hovering animation 
+6. blog-card hovering animation
 7. showed placeholder image at the banner of reader and editor page
-
-
-register page: return a div if password != password
+8. register page: return a div if password != repeat password
 
 
 add date to each blog

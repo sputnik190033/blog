@@ -50,7 +50,10 @@
 		<h1>REGISTER</h1>
 		<br>
 		<hr>
-
+		<div th:if="${isSame==false}" class="error" align="center">
+		Please repeat your password correctly
+		</div>
+		
 		<!-- <p style = "color:grey">Please fill in this form to create an account.</p> -->
 		<form action="/register" method="post" class="needs-validation" >
 
