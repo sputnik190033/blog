@@ -1,9 +1,11 @@
 package com.example.demo.controller;
 
 import java.util.Map;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.origin.SystemEnvironmentOrigin;
+import org.springframework.jdbc.object.BatchSqlUpdate;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 
@@ -44,17 +46,22 @@ public class EditorController {
 			@RequestParam("blog_title") String blogTitle, //
 			@RequestParam("blog_content") String blogContent, //
 			ModelAndView mv) {
-
+		
+		Date date = new Date();
 		BlogInfo blogInfo = BlogInfo.builder()// builder is a static method
 				.name((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())//
 				.title(blogTitle)//
 				.content(blogContent)//
+				.date(date)//
+				.views((long)0)//
 				.build();//
 
 		blogInfoRepository.save(blogInfo);
 		
 		mv.addObject("theBlogAuthor", blogInfo.getName());
 		mv.addObject("theBlogId", blogInfo.getId());
+		mv.addObject("theBlogDate", blogInfo.getDate());
+		mv.addObject("theBlogViews", blogInfo.getViews());
 		mv.addObject("theBlogTitle", blogTitle);
 		mv.addObject("theBlogContent", blogContent); 
 		mv.setViewName("reader");
@@ -78,9 +85,10 @@ public class EditorController {
 		if(blogInfo.getName().equals((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())) {
 			isAuthorized = true;
 		}
-		mv.addObject("isAuthorized",isAuthorized);
-		
+		mv.addObject("isAuthorized",isAuthorized);	
 		mv.addObject("theBlogAuthor", blogInfo.getName());
+		mv.addObject("theBlogDate", blogInfo.getDate());
+		mv.addObject("theBlogViews", blogInfo.getViews());
 		mv.addObject("theBlogId", blogId);
 		mv.addObject("theBlogTitle", blogTitle);
 		mv.addObject("theBlogContent", blogContent); // replaceAll("\n", "<br />")

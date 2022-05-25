@@ -80,6 +80,6 @@
 6. blog-card hovering animation
 7. showed placeholder image at the banner of reader and editor page
 8. register page: return a div if password != repeat password
+9. added date to each blog
+10. added views to each blog
 
-
-add date to each blog

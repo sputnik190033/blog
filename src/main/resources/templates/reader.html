@@ -43,7 +43,19 @@
 
 	<div class="blog">
 		<h1 class="title" th:text="${theBlogTitle}"></h1>
-		<p class="published"><span>Published by - <span th:text="${theBlogAuthor}"></span></span></p>
+		<p class="published">
+			<span>Published by - 
+			<span th:text="${theBlogAuthor}"></span>
+			 - &nbsp; At 
+			<span th:text="${theBlogDate}"></span>
+			</span>
+			
+			<span class="views-right">
+			Views:
+			<span  th:text="${theBlogViews}"></span>
+			</spanclass="views-right">
+		</p>
+			
 		<div class="article">
 			<p th:utext="${theBlogContent}" style="white-space: pre-line;"></p>
 		</div>
