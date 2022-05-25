@@ -77,5 +77,13 @@
 3. made a button for logging out in top navbar
 4. implemented the authorization checking if the user can edit or delete the blog
 
+animation effect
+homepage: topnav: move while scrolling
+blog-card: fload while hovering
+
+randomize the image of each blog card
+show image at the banner of reader's page
+
+register page: return a div if password != password
 
 
