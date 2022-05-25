@@ -148,4 +148,11 @@
 #btn-read:hover{
 	background-color: #20c2af;
 }
+.credits{
+	text-align: center;
+	margin-top:50px;
+	float: center;
+	color:#888;
+	
+}
 
