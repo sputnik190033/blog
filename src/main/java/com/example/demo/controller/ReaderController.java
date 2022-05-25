@@ -25,12 +25,9 @@ public class ReaderController {
 	
 	@GetMapping("/delete")
 	public ModelAndView delete(//
-			@RequestParam("username") String username,//
-			@RequestParam("blogId") long blogId,//
-			Map<String, Object> map, //
+			@RequestParam("blogId") long blogId,//			
 			ModelAndView mv
 			) {
-		map.put("username", username);
 		BlogInfo blogInfo = blogInfoRepository.findById(blogId);
 		blogInfoRepository.delete(blogInfo);
 		
@@ -41,13 +38,9 @@ public class ReaderController {
 	
 	@GetMapping("/editor")
 	public ModelAndView editBlog(//
-			@RequestParam("username") String username,//
 			@RequestParam("blogId") long blogId,//
-			Map<String, Object> map, //
 			ModelAndView mv
-			) {
-		map.put("username", username);
-		
+			) {		
 		BlogInfo blogInfo = blogInfoRepository.findById(blogId);		
 		mv.addObject("theBlogId", blogId);
 		mv.addObject("theBlogAuthor", blogInfo.getName());
@@ -56,6 +49,5 @@ public class ReaderController {
 			
 		mv.setViewName("editor");	
 		return mv;
-	}
-		
+	}		
 }

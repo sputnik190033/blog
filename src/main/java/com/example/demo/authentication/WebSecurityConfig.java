@@ -39,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	  web
 	    .debug(false)
 	    .ignoring()
-	    .antMatchers("/images/**", "/js/**", "/css/**");
+	    .antMatchers("/img/**", "/js/**", "/css/**");
 	}
 	
 //	@Bean

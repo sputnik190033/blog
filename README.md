@@ -70,7 +70,10 @@
 3. implemented spring security（logging out unfinished)
 4. added word count limit to the textarea of titles
 
-- [ ] add author to new blog by new method ((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())
+## day8(5.25)
+1. cleaned the codes that are meaningless after implementing Spring security
+2. add author to new blog by new method ((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())
+
 - [ ] authenticate if the user can edit the blog
 - [ ] @{/builder(username=${username})}?
 

@@ -28,8 +28,8 @@
 <body>
 
 	<div class="topnav">
-		<a th:href="@{/builder(username=${username})}">New Blog</a>
-		<a th:href="@{/home(username=${username})}">Home</a>
+		<a th:href="@{/builder}">New Blog</a>
+		<a th:href="@{/home}">Home</a>
 		<a href="#" class="active">Blog</a>
 		<span th:text="${#httpServletRequest.remoteUser}" name="username"></span>
 	</div>

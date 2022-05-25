@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.origin.SystemEnvironmentOrigin;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,11 +32,8 @@ public class EditorController {
 
 	@GetMapping("/home")
 	public ModelAndView backHome(//
-			@RequestParam("username") String username,//
-			Map<String, Object> map, //
 			ModelAndView mv) { 
 																													// page
-		map.put("username", username);
 		mv.addObject("blogList", blogInfoRepository.findAll());
 		mv.setViewName("home");
 		return mv;
@@ -43,13 +41,12 @@ public class EditorController {
 
 	@PostMapping("/publish")
 	public ModelAndView publish(//
-			@RequestParam("username") String username, //
 			@RequestParam("blog_title") String blogTitle, //
 			@RequestParam("blog_content") String blogContent, //
 			ModelAndView mv) {
 
 		BlogInfo blogInfo = BlogInfo.builder()// builder is a static method
-				.name(username)//
+				.name((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())//
 				.title(blogTitle)//
 				.content(blogContent)//
 				.build();//
@@ -60,7 +57,7 @@ public class EditorController {
 		mv.addObject("theBlogId", blogInfo.getId());
 		mv.addObject("theBlogTitle", blogTitle);
 		mv.addObject("theBlogContent", blogContent); // replaceAll("\n", "<br />")
-		mv.addObject("username", username);
+		//mv.addObject("username", username);
 		mv.setViewName("reader");
 
 		return mv;
@@ -68,7 +65,6 @@ public class EditorController {
 
 	@PostMapping("/update")
 	public ModelAndView update(//
-			@RequestParam("username") String username, //
 			@RequestParam("blogId") long blogId,//
 			@RequestParam("blog_title") String blogTitle, //
 			@RequestParam("blog_content") String blogContent, //
@@ -83,7 +79,6 @@ public class EditorController {
 		mv.addObject("theBlogId", blogId);
 		mv.addObject("theBlogTitle", blogTitle);
 		mv.addObject("theBlogContent", blogContent); // replaceAll("\n", "<br />")
-		mv.addObject("username", username);
 		mv.setViewName("reader");
 
 		return mv;
