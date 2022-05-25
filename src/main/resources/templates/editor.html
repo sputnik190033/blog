@@ -7,7 +7,6 @@
 
 	<link rel="stylesheet" type="text/css" href="/css/editor.css">
 	<link rel="stylesheet" type="text/css" href="/css/home.css">
-
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
 	<link rel="stylesheet"
 		href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
@@ -17,15 +16,21 @@
 		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		
 </head>
 
 <body>
-
-	<div class="topnav">
-		<a th:href="@{/builder}">New Blog</a>
-		<a th:href="@{/home}">Home</a>
-		<a class="active" href="#">Editor</a>
-		<span name="username" th:text="${#httpServletRequest.remoteUser}" ></span>	
+	
+	<div class="topnav">		
+		<a class="topnav-right" th:href="@{/builder}">New Blog</a>
+		<a class="topnav-right" th:href="@{/home}">Home</a>	
+		<a class="topnav-right active" href="#">Editor</a>
+		<div class="dropdown">
+		  <a class="topnav-left dropbtn" href="#" th:text="|Welcome, ${#httpServletRequest.remoteUser}|" name="username"></a>		
+		    <div class="dropdown-content">
+		      <a th:href="@{/logout}">log out</a>	     
+		    </div>
+		</div>	
 	</div>
 
 	<div class="banner">

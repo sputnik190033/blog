@@ -9,14 +9,15 @@
 ---
 
 ## backend:
-- [x] put new blog into database
-- [x] show each blog as blog cards
-- [x] show specific blog when press read button from home page
-- [x] show username at the top left corner of each page
-- [x] delete a blog
-- [x] show the right author of the blog
+- [x] how to put new blog into database?
+- [x] how toshow each blog as blog cards?
+- [x] how to show specific blog when press read button from home page?
+- [x] how to show username at the top left corner of each page?
+- [x] how to delete a blog?
+- [x] how to show the right author of the blog?
 - [x] how to put the content of a blog into the editor?
 - [x] how to add word amount restriction to textarea in html?
+- [x] how to authenticate if the user can edit or delete the blog?
 - [ ] how to store images that have been uploaded?
 - [ ] how to put images into banners?
 
@@ -73,8 +74,8 @@
 ## day8(5.25)
 1. cleaned the codes that are meaningless after implementing Spring security
 2. add author to new blog by new method ((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())
+3. made a button for logging out in top navbar
+4. implemented the authorization checking if the user can edit or delete the blog
 
-- [ ] authenticate if the user can edit the blog
-- [ ] @{/builder(username=${username})}?
 
 

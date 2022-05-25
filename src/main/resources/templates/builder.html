@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Blog: Editor</title>
-
+	
 	<link rel="stylesheet" type="text/css" href="/css/editor.css">
 	<link rel="stylesheet" type="text/css" href="/css/home.css">
 
@@ -17,14 +17,22 @@
 		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	
+
 </head>
 
 <body>
-
-	<div class="topnav">
-		<a class="active" href="#">New Blog</a>
-		<a th:href="@{/home}">Home</a>
-		<span name="username" th:text="${#httpServletRequest.remoteUser}" ></span>	
+	
+	<div class="topnav">		
+		<a class="topnav-right active" href="#">New Blog</a>
+		<a class="topnav-right" th:href="@{/home}">Home</a>	
+		
+		<div class="dropdown">
+		  <a class="topnav-left dropbtn" href="#" th:text="|Welcome, ${#httpServletRequest.remoteUser}|" name="username"></a>		
+		    <div class="dropdown-content">
+		      <a th:href="@{/logout}">log out</a>	     
+		    </div>
+		</div>	
 	</div>
 
 	<div class="banner">

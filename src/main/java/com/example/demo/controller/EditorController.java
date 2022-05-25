@@ -56,8 +56,7 @@ public class EditorController {
 		mv.addObject("theBlogAuthor", blogInfo.getName());
 		mv.addObject("theBlogId", blogInfo.getId());
 		mv.addObject("theBlogTitle", blogTitle);
-		mv.addObject("theBlogContent", blogContent); // replaceAll("\n", "<br />")
-		//mv.addObject("username", username);
+		mv.addObject("theBlogContent", blogContent); 
 		mv.setViewName("reader");
 
 		return mv;
@@ -74,7 +73,13 @@ public class EditorController {
 		blogInfo.setTitle(blogTitle);
 		blogInfo.setContent(blogContent);
 		blogInfoRepository.save(blogInfo);
-
+		
+		boolean isAuthorized = false;
+		if(blogInfo.getName().equals((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())) {
+			isAuthorized = true;
+		}
+		mv.addObject("isAuthorized",isAuthorized);
+		
 		mv.addObject("theBlogAuthor", blogInfo.getName());
 		mv.addObject("theBlogId", blogId);
 		mv.addObject("theBlogTitle", blogTitle);
