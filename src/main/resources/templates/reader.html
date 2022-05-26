@@ -9,10 +9,10 @@
 	<link rel="stylesheet" type="text/css" href="/css/editor.css">
 	<link rel="stylesheet" type="text/css" href="/css/home.css">
 	<link rel="stylesheet" type="text/css" href="/css/reader.css">
-
+	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
 	<link rel="stylesheet"
-		href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+		href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link rel="stylesheet"
@@ -27,64 +27,70 @@
 
 <body>
 
-	<div class="topnav">
-		<a th:href="@{/builder(username=${username})}">New Blog</a>
-		<a th:href="@{/home(username=${username})}">Home</a>
-		<a href="#" class="active">Blog</a>
-		<span th:text="${#httpServletRequest.remoteUser}" name="username"></span>
+	<div class="topnav">		
+		<a class="topnav-right" th:href="@{/builder}">New Blog</a>
+		<a class="topnav-right" th:href="@{/home}">Home</a>	
+		<a class="topnav-right active" href="#">Blog</a>
+		<div class="dropdown">
+		  <a class="topnav-left dropbtn" href="#" th:text="|Welcome, ${#httpServletRequest.remoteUser}|" name="username"></a>		
+		    <div class="dropdown-content">
+		      <a th:href="@{/logout}">log out</a>	     
+		    </div>
+		</div>	
 	</div>
 
-	<div class="banner"></div>
+	<div class="banner pseudo"></div>
 
 	<div class="blog">
 		<h1 class="title" th:text="${theBlogTitle}"></h1>
-		<p class="published"><span>Published by - <span th:text="${theBlogAuthor}"></span></span></p>
+		<p class="published">
+			<span>Published by - 
+			<span th:text="${theBlogAuthor}"></span>
+			 - &nbsp; At 
+			<span th:text="${theBlogDate}"></span>
+			</span>
+			
+			<span class="views-right">
+			Views:
+			<span  th:text="${theBlogViews}"></span>
+			</spanclass="views-right">
+		</p>
+			
 		<div class="article">
 			<p th:utext="${theBlogContent}" style="white-space: pre-line;"></p>
-			<!--
-	 <p>
-        Undertale is a 2015 2D role-playing video game created by American indie developer Toby Fox. The player controls a child who has fallen into the Underground: a large, secluded region under the surface of the Earth, separated by a magical barrier. The player meets various monsters during the journey back to the surface, although some monsters might engage the player in a fight. The combat system involves the player navigating through mini-bullet hell attacks by the opponent. They can opt to pacify or subdue monsters in order to spare them instead of killing them. These choices affect the game, with the dialogue, characters, and story changing based on outcomes.
-      </p>  
-      <p>
-        Outside of artwork and character designs by Temmie Chang, Fox developed the entirety of the game by himself, including the script and music. The game took inspiration from several sources, including the Brandish, Mario & Luigi, and Mother role-playing game series, bullet hell shooter series Touhou Project, role-playing game Moon: Remix RPG Adventure, and British comedy show Mr. Bean. Originally, Undertale was meant to be two hours in length and was set to be released in mid-2014. However, development was delayed over the next three years.
-      </p>
-      -->
 		</div>
 	</div>
 
 	<div class="blog-options">
 		<form action="/home" method="get">
-		<input type="hidden" name="username" th:value="${username}">
-			<button class="btn cyan back-btn" type="submit">
-				<span class="material-symbols-outlined" style="vertical-align: sub;">
-					arrow_back
-				</span>
-				back</button>
+			<input type="hidden" name="username" th:value="${username}">
+				<button class="btn cyan back-btn" type="submit">
+					<span class="material-symbols-outlined" style="vertical-align: sub;">
+						arrow_back
+					</span>
+					back</button>
 		</form>
 		
 		<form action="/editor" method="get">
-		<input type="hidden" name="username" th:value="${username}">
-		<input type="hidden" name="blogId" th:value="${theBlogId}">
-			<button class="btn grey edit-btn" type="submit">
-				<span class="material-symbols-outlined" style="vertical-align: sub;">
-					edit_note
-				</span>
-				edit
-			</button>
+			<input type="hidden" name="username" th:value="${username}">
+			<input type="hidden" name="blogId" th:value="${theBlogId}">
+				<button class="btn grey edit-btn" type="submit" th:if="${isAuthorized}">
+					<span class="material-symbols-outlined" style="vertical-align: sub;">
+						edit_note
+					</span>
+					edit
+				</button>
 		</form>
 		
 		<form action="/delete" method="get">
-		<input type="hidden" name="username" th:value="${username}">
-		<input type="hidden" name="blogId" th:value="${theBlogId}">
-		<button class="btn red delete-btn">
-			<span class="material-symbols-outlined" style="vertical-align: sub;">
-				delete
-			</span>delete</button>
-		</form>
-		
-		
+			<input type="hidden" name="username" th:value="${username}">
+			<input type="hidden" name="blogId" th:value="${theBlogId}">
+			<button class="btn red delete-btn" th:if="${isAuthorized}">
+				<span class="material-symbols-outlined" style="vertical-align: sub;">
+					delete
+				</span>delete</button>
+		</form>		
 	</div>
 
 </body>
-
 </html>

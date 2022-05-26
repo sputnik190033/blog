@@ -1,10 +1,12 @@
-
 .banner{
   width: 100%;
   height: 400px;
   position: relative;
   background-color: gainsboro;
-  background-size: cover;
+}
+.banner.pseudo{
+  background-image: url(/img/disco7.jpeg);
+  background-size: contain;
   background-position: center;
 }
 .banner-upload-btn{
@@ -46,7 +48,7 @@ textarea::-webkit-scrollbar-thumb {
   font-size: 36px;
   font-weight: 500;
   color: #333;
-  resize: none;
+  resize:none;
   border:none;
   padding: 10px;
   border-radius: 10px;

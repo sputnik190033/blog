@@ -9,13 +9,15 @@
 ---
 
 ## backend:
-- [x] put new blog into database
-- [x] show each blog as blog cards
-- [x] show specific blog when press read button from home page
-- [x] show username at the top left corner of each page
-- [x] delete a blog
-- [x] show the right author of the blog
+- [x] how to put new blog into database?
+- [x] how toshow each blog as blog cards?
+- [x] how to show specific blog when press read button from home page?
+- [x] how to show username at the top left corner of each page?
+- [x] how to delete a blog?
+- [x] how to show the right author of the blog?
 - [x] how to put the content of a blog into the editor?
+- [x] how to add word amount restriction to textarea in html?
+- [x] how to authenticate if the user can edit or delete the blog?
 - [ ] how to store images that have been uploaded?
 - [ ] how to put images into banners?
 
@@ -67,10 +69,17 @@
 1. put the content of a blog into the editor when press edit button from reader page
 2. implemented the function of updating a blog
 3. implemented spring security（logging out unfinished)
-4. 
+4. added word count limit to the textarea of titles
 
-- [ ] authenticate if the user can edit the blog
-- [ ] how to add word amount restriction to textarea in html?
-- [ ] @{/builder(username=${username})}?
-
+## day8(5.25)
+1. cleaned the codes that are meaningless after implementing Spring security
+2. add author to new blog by new method ((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())
+3. made a button for logging out in top navbar
+4. implemented the authorization checking if the user can edit or delete the blog
+5. made top navbar sticky
+6. blog-card hovering animation
+7. showed placeholder image at the banner of reader and editor page
+8. register page: return a div if password != repeat password
+9. added date to each blog
+10. added views to each blog
 

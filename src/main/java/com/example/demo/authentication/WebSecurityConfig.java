@@ -33,14 +33,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.csrf()
 				.disable();
 	}
+
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 	  web
 	    .debug(false)
 	    .ignoring()
-	    .antMatchers("/images/**", "/js/**", "/css/**");
+	    .antMatchers("/img/**", "/js/**", "/css/**");
 	}
-
+	
 //	@Bean
 //	@Override
 //	public UserDetailsService userDetailsService() {
