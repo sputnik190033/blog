@@ -63,36 +63,34 @@
 
 	<div class="blog-options">
 		<form action="/home" method="get">
-		<input type="hidden" name="username" th:value="${username}">
-			<button class="btn cyan back-btn" type="submit">
-				<span class="material-symbols-outlined" style="vertical-align: sub;">
-					arrow_back
-				</span>
-				back</button>
+			<input type="hidden" name="username" th:value="${username}">
+				<button class="btn cyan back-btn" type="submit">
+					<span class="material-symbols-outlined" style="vertical-align: sub;">
+						arrow_back
+					</span>
+					back</button>
 		</form>
 		
 		<form action="/editor" method="get">
-		<input type="hidden" name="username" th:value="${username}">
-		<input type="hidden" name="blogId" th:value="${theBlogId}">
-			<button class="btn grey edit-btn" type="submit" th:if="${isAuthorized}">
-				<span class="material-symbols-outlined" style="vertical-align: sub;">
-					edit_note
-				</span>
-				edit
-			</button>
+			<input type="hidden" name="username" th:value="${username}">
+			<input type="hidden" name="blogId" th:value="${theBlogId}">
+				<button class="btn grey edit-btn" type="submit" th:if="${isAuthorized}">
+					<span class="material-symbols-outlined" style="vertical-align: sub;">
+						edit_note
+					</span>
+					edit
+				</button>
 		</form>
 		
 		<form action="/delete" method="get">
-		<input type="hidden" name="username" th:value="${username}">
-		<input type="hidden" name="blogId" th:value="${theBlogId}">
-		<button class="btn red delete-btn" th:if="${isAuthorized}">
-			<span class="material-symbols-outlined" style="vertical-align: sub;">
-				delete
-			</span>delete</button>
-		</form>
-			
+			<input type="hidden" name="username" th:value="${username}">
+			<input type="hidden" name="blogId" th:value="${theBlogId}">
+			<button class="btn red delete-btn" th:if="${isAuthorized}">
+				<span class="material-symbols-outlined" style="vertical-align: sub;">
+					delete
+				</span>delete</button>
+		</form>		
 	</div>
 
 </body>
-
 </html>

@@ -22,7 +22,7 @@ paths:
   /home:  
     get:
       tags:
-        - users
+        - blogs
       description: 'return home page'
       operationId: backHome
       responses:
@@ -103,7 +103,7 @@ paths:
   /publish:
     post:
       tags: 
-        - users
+        - blogs
       description: 'get blog info input and put them into database'
       operationId: publish
       requestBody:
@@ -119,6 +119,10 @@ paths:
                   type: "string"
                 name:
                   type: "string"
+                date:
+                  type: "object"
+                views:
+                  type: "integer"
       responses:
         '200':
           description: OK
@@ -130,7 +134,7 @@ paths:
   /editor:
     get:
       tags:
-        - users
+        - blogs
       description: 'return editor page'
       operationId: newBlog
       responses:
@@ -144,7 +148,7 @@ paths:
   /reader:
     get:
       tags:
-        - users
+        - blogs
       description: 'return reader page'
       operationId: readBlog
       requestBody:
@@ -163,11 +167,24 @@ paths:
             text/html:    
               schema:
                 $ref: "#/components/schemas/ReaderHtml"
+  /builder:
+    get:
+      tags:
+        - blogs
+      description: 'return builder page'
+      operationId: newBlog
+      responses:
+        '200':
+          description: OK
+          content:
+            text/html:    
+              schema:
+                $ref: "#/components/schemas/ReaderHtml"
 
-  /edit:
+  /update:
     post:
       tags: 
-        - users
+        - blogs
       description: 'edit the existing blog'
       operationId: editBlog
       requestBody:
@@ -181,8 +198,6 @@ paths:
                   type: "string"
                 blogContent:
                   type: "string"
-                name:
-                  type: "string"
       responses:
         '200':
           description: OK
@@ -194,7 +209,7 @@ paths:
   /delete:
     post:
       tags: 
-        - users
+        - blogs
       description: 'delete blog info in database'
       operationId: deleteBlog
       requestBody:
@@ -205,8 +220,6 @@ paths:
               type: "object"
               properties:
                 blogId:
-                  type: "string"
-                name:
                   type: "string"
       responses:
         '200':
@@ -247,6 +260,10 @@ components:
           type: "string"
         name:
           type: "string"
+        date:
+          type: "object"
+        views:
+          type: "integer"
         view: 
           type: "string"
     HomeHtml:
@@ -255,6 +272,17 @@ components:
       type: "string"
     ReaderHtml:
       type: "string"
+      properties:
+        blogTitle:
+          type: "string"
+        blogContent:
+          type: "string"
+        name:
+          type: "string"
+        date:
+          type: "object"
+        views:
+          type: "integer"
     DeleteBlog:
       type: "object"
       properties:

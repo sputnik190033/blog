@@ -1,14 +1,11 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.origin.SystemEnvironmentOrigin;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.example.demo.model.UserInfo;
 import com.example.demo.repository.UserInfoRepository;
 
@@ -22,8 +19,8 @@ public class RegisterController {
 	private UserInfoRepository userInfoRepository;
 
 	@GetMapping("/register")
-	public String getRegisterView() { // return html page
-		//System.out.println((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+	public String getRegisterView() { 
+		
 		return "register";
 	}
 
@@ -49,8 +46,7 @@ public class RegisterController {
 			userInfoRepository.save(userInfo);
 
 			mv.addObject("username", username);
-			mv.setViewName("login");
-			
+			mv.setViewName("login");		
 		}
 		mv.addObject("isSame", isSame);
 		return mv;

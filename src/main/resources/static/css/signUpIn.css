@@ -65,8 +65,8 @@ input{
 	padding: 15px 15px;
 }
 ::placeholder { 
-  color: gray;
-  opacity: 1; 
+	color: gray;
+	opacity: 1; 
 }
 
 
