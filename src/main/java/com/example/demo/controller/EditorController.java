@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.authentication.WebSecurityConfig;
 import com.example.demo.model.BlogInfo;
 import com.example.demo.repository.BlogInfoRepository;
 
@@ -36,7 +37,7 @@ public class EditorController {
 		
 		Date date = new Date();
 		BlogInfo blogInfo = BlogInfo.builder()// builder is a static method
-				.name((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())//
+				.name(WebSecurityConfig.getCurrentUsername())//
 				.title(blogTitle)//
 				.content(blogContent)//
 				.date(date)//
@@ -46,7 +47,6 @@ public class EditorController {
 		blogInfoRepository.save(blogInfo);
 		
 		mv.addObject("isAuthorized",true);
-		
 		mv.addObject("theBlogAuthor", blogInfo.getName());
 		mv.addObject("theBlogId", blogInfo.getId());
 		mv.addObject("theBlogDate", blogInfo.getDate());
@@ -54,7 +54,7 @@ public class EditorController {
 		mv.addObject("theBlogTitle", blogTitle);
 		mv.addObject("theBlogContent", blogContent); 
 		mv.setViewName("reader");
-
+		
 		return mv;
 	}
 
@@ -70,11 +70,11 @@ public class EditorController {
 		blogInfo.setContent(blogContent);
 		blogInfoRepository.save(blogInfo);
 		
-		boolean isAuthorized = false;
-		if(blogInfo.getName().equals((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())) {
-			isAuthorized = true;
-		}
-		mv.addObject("isAuthorized",isAuthorized);	
+//		boolean isAuthorized = false;
+//		if(blogInfo.getName().equals(WebSecurityConfig.getCurrentUsername())) {
+//			isAuthorized = true;
+//		}
+		mv.addObject("isAuthorized",true);	
 		mv.addObject("theBlogAuthor", blogInfo.getName());
 		mv.addObject("theBlogDate", blogInfo.getDate());
 		mv.addObject("theBlogViews", blogInfo.getViews());

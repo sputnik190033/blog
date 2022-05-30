@@ -31,14 +31,16 @@ public class RegisterController {
 			@RequestParam("rpassword") String rpassword, //
 			ModelAndView mv) {
 		
-		boolean isSame = true;
-		if (!password.equals(rpassword)) {
+		boolean isSame = false;
+		UserInfo userInfo = userInfoRepository.findByName(username);
+		
+		if (userInfo != null) { 
 			mv.setViewName("register");
-			isSame = false;
-			
+			isSame = true;
+			mv.addObject("isSame", isSame);
 		}else {
 
-			UserInfo userInfo = UserInfo.builder()// builder is a static method
+			userInfo = UserInfo.builder()// builder is a static method
 					.name(username)//
 					.password(password)//
 					.build();//
@@ -48,7 +50,7 @@ public class RegisterController {
 			mv.addObject("username", username);
 			mv.setViewName("login");		
 		}
-		mv.addObject("isSame", isSame);
+		
 		return mv;
 	}
 }

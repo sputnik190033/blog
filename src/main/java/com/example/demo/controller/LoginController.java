@@ -20,7 +20,7 @@ public class LoginController {
 	}
 
 	@GetMapping("/")
-	public ModelAndView login(ModelAndView mv) {
+	public ModelAndView accessHomePage(ModelAndView mv) {
 
 		mv.addObject("blogList", blogInfoRepository.findAll());
 		mv.setViewName("home");

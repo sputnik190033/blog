@@ -7,6 +7,7 @@
 	position: sticky;
 	position: -webkit-sticky; 
   	top: 0;
+  	z-index: 99;
 }
 .topnav a{
 	color: #fff;
@@ -134,7 +135,7 @@
 }
 #btn-read{
 	float: right;
-	padding:8px 14px;
+	padding:8px 14px;	
 	margin-right: 20px;
 	margin-bottom: 20px;
 }

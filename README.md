@@ -10,7 +10,7 @@
 
 ## backend:
 - [x] how to put new blog into database?
-- [x] how toshow each blog as blog cards?
+- [x] how to show each blog as blog cards?
 - [x] how to show specific blog when press read button from home page?
 - [x] how to show username at the top left corner of each page?
 - [x] how to delete a blog?
@@ -83,3 +83,9 @@
 9. added date to each blog
 10. added views to each blog
 
+## presentation(5.26)
+
+## day9(5.30)
+1. added validation of repeated username at registration (userInfo won't be saved into DB if username already exists)
+2. set the z-index of top navbar
+3. ensured all the elements at login page are perfectly aligned with each other

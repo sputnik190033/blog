@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.authentication.WebSecurityConfig;
 import com.example.demo.model.BlogInfo;
 import com.example.demo.repository.BlogInfoRepository;
 
@@ -18,7 +19,7 @@ public class HomeController {
 	private BlogInfoRepository blogInfoRepository;
 
 	@GetMapping("/builder")
-	public ModelAndView editBlog(ModelAndView mv) {
+	public ModelAndView newBlog(ModelAndView mv) {
 		
 		mv.setViewName("builder");	
 		return mv;
@@ -41,7 +42,7 @@ public class HomeController {
 		mv.addObject("theBlogContent", blogInfo.getContent()); 
 		
 		boolean isAuthorized = false;	
-		if(blogInfo.getName().equals((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())) {
+		if(blogInfo.getName().equals(WebSecurityConfig.getCurrentUsername())) {
 			isAuthorized = true;
 		}
 		mv.addObject("isAuthorized",isAuthorized);

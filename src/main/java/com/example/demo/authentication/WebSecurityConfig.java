@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
@@ -40,6 +41,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	    .debug(false)
 	    .ignoring()
 	    .antMatchers("/img/**", "/js/**", "/css/**");
+	}
+	
+	public static String getCurrentUsername() {
+		Object obj = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (obj instanceof String) return (String) obj;
+		if (obj instanceof User) return ((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+		return obj.toString();	
 	}
 	
 //	@Bean
