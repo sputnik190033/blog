@@ -29,7 +29,7 @@ public class ReaderController {
 		return mv;
 	}	
 	
-	@GetMapping("/editor")
+	@PostMapping("/editor")
 	public ModelAndView editBlog(//
 			@RequestParam("blogId") long blogId,//
 			ModelAndView mv

@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.hamcrest.Matcher;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -49,13 +51,14 @@ public class EditorControllerTest {
 				.andExpect(model().attribute("blogList", blogList));
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	@WithMockUser(username = "mockUser")
 	public void Publish() throws Exception {
 
 		String blogTitle = "title";
 		String blogContent = "content";
-		//Date date = new Date();
+		Date date = new Date();
 
 		RequestBuilder request = MockMvcRequestBuilders//
 				.post("/publish")//
@@ -67,9 +70,14 @@ public class EditorControllerTest {
 				.andExpect(view().name("reader"))//
 				.andExpect(model().attribute("isAuthorized", true))//
 				.andExpect(model().attribute("theBlogAuthor", "mockUser"))//
-				//.andExpect(model().attribute("theBlogDate", date))//
 				.andExpect(model().attribute("theBlogTitle", blogTitle))//
-				.andExpect(model().attribute("theBlogContent", blogContent));
+				.andExpect(model().attribute("theBlogContent", blogContent))//
+				.andExpect(model().attribute("theBlogDate", 
+						Matchers.allOf(
+								Matchers.hasProperty("year", Matchers.is(date.getYear())),
+								Matchers.hasProperty("month", Matchers.is(date.getMonth())),
+								Matchers.hasProperty("date", Matchers.is(date.getDate()))
+				)));
 	}
 
 	@Test

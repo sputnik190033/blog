@@ -60,6 +60,28 @@ public class ReaderControllerTest {
 
 	@Test
 	@WithMockUser(username = "mockUser")
+	public void Delete_Fail() throws Exception {
+		
+		long blogId = 1l;
+		
+		List<BlogInfo> blogList = new ArrayList<BlogInfo>();
+		
+		when(blogInfoRepository.findById(blogId)).thenReturn(null);
+		
+		when(blogInfoRepository.findAll()).thenReturn(blogList);
+
+		RequestBuilder request = MockMvcRequestBuilders//
+				.post("/delete")//
+				.param("blogId", ""+blogId)//
+				.accept(MediaType.APPLICATION_JSON);
+
+		mockMvc.perform(request)//
+				.andExpect(view().name("home"))//
+				.andExpect(model().attribute("blogList", blogList));
+	}
+	
+	@Test
+	@WithMockUser(username = "mockUser")
 	public void AccessEditorPage() throws Exception {
 
 		long blogId = 1l;

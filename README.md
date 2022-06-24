@@ -89,3 +89,10 @@
 1. added validation of repeated username at registration (userInfo won't be saved into DB if username already exists)
 2. set the z-index of top navbar
 3. ensured all the elements at login page are perfectly aligned with each other
+4. finished all the controllers' unit tests at 100% coverage
+
+## day10(5.31)
+- [ ] organize all the controllers and their methods
+- [ ] optimize all the methods' names 
+- [ ] add service
+

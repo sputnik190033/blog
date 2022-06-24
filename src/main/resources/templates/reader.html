@@ -71,7 +71,7 @@
 					back</button>
 		</form>
 		
-		<form action="/editor" method="get">
+		<form action="/editor" method="post">
 			<input type="hidden" name="username" th:value="${username}">
 			<input type="hidden" name="blogId" th:value="${theBlogId}">
 				<button class="btn grey edit-btn" type="submit" th:if="${isAuthorized}">
@@ -82,7 +82,7 @@
 				</button>
 		</form>
 		
-		<form action="/delete" method="get">
+		<form action="/delete" method="post">
 			<input type="hidden" name="username" th:value="${username}">
 			<input type="hidden" name="blogId" th:value="${theBlogId}">
 			<button class="btn red delete-btn" th:if="${isAuthorized}">

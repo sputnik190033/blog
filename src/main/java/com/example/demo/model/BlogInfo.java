@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="blog1")
+@Table(name="blogInfo")
 public class BlogInfo {
 	
 	@Id 
